@@ -1,0 +1,122 @@
+/* Reset default margin and padding */
+body, h1, h2, ul, li, p {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Basic styles for header, main, footer */
+  header, main, footer {
+    padding: 10px;
+  }
+  
+  header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #3d9970; /* Green */
+    color: #fff;
+  }
+  
+  header img {
+    margin-right: 10px;
+  }
+  
+  h1 {
+    margin-left: 10px;
+  }
+  
+  footer {
+    background-color: #3d9970; /* Green */
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  /* Side navigation bar */
+  .sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #3d9970; /* Green */
+    padding-top: 20px;
+  }
+  
+  .sidenav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidenav ul li {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .sidenav ul li a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    padding: 10px;
+  }
+  
+  .sidenav ul li a:hover {
+    background-color: #2ecc71; /* Light green on hover */
+  }
+  
+  /* User management form */
+  .form-container {
+    max-width: 400px;
+    margin: 20px auto; /* Center the form */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1); /* Transparent background */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  #new-account-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff; /* White font color */
+  }
+  
+  #new-account-form input[type="text"],
+  #new-account-form input[type="tel"],
+  #new-account-form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  #new-account-form button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  #new-account-form button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  /* Animation */
+  .hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .show {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease;
+  }
+  
