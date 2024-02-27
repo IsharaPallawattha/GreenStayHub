@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <header>
+    <img src="green_stay_hub_logo.png" alt="GreenStayHub Logo">
+    <h1>--Admin Dashboard</h1>
+  </header>
+  <nav class="sidenav">
+    <ul>
+      <li><a href="#user-management">User Management</a></li>
+      <li><a href="#content-management">Content Management</a></li>
+    </ul>
+  </nav>
+  <main>
+    <section id="user-management" class="module">
+      <h2>User Management</h2>
+      <!-- User management form goes here -->
+      <button id="create-account-btn">Create New Account</button>
+      <div id="create-account-form" class="hidden">
+        <div class="form-container">
+          <form id="new-account-form">
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" name="first-name" required>
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" name="last-name" required>
+            <label for="mobile-no">Mobile No:</label>
+            <input type="tel" id="mobile-no" name="mobile-no" required>
+            <label for="batch">Batch:</label>
+            <input type="text" id="batch" name="batch">
+            <label for="user-type">User Type:</label>
+            <select id="user-type" name="user-type" required>
+              <option value="">Select User Type</option>
+              <option value="student">Student</option>
+              <option value="landlord">Landlord</option>
+              <option value="warden">Warden</option>
+            </select>
+            <button type="submit">Create Account</button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section id="content-management" class="module">
+     
+      <!-- Content management form goes here -->
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 NSBM Green University</p>
+  </footer>
+  <script src="admin.js"></script>
+</body>
+</html>
