@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Details</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/studentInfo.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Student Details</h1>
+    <input type="text" id="searchInput" placeholder="Search by Student Number">
+    <table id="studentTable" class="table">
+      <thead>
+        <tr>
+          <th>Room Number</th>
+          <th>Student Number</th>
+          <th>Student Name</th>
+          <th>Home Address</th>
+          <th>Floor</th>
+          <th>Phone Number</th>
+          <th>Room Type</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Table rows will be added dynamically using JavaScript -->
+      </tbody>
+    </table>
+    <button id="addRowBtn" class="btn btn-primary">Add Student</button>
+  </div>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Custom JavaScript -->
+  <script src="/js/studentInfo.js"></script>
+</body>
+</html>

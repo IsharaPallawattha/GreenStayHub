@@ -1,0 +1,62 @@
+/* Custom CSS styles for room details page */
+
+.container {
+    margin-top: 50px;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  #searchInput {
+    margin-bottom: 20px;
+  }
+  
+  #addRowBtn {
+    margin-bottom: 20px;
+  }
+  
+  /* Styling for table */
+  .table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .table th,
+  .table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .table th {
+    background-color: #f2f2f2;
+  }
+  
+  /* Styling for buttons */
+  .btn {
+    margin-right: 5px;
+    
+  }
+  
+  /* Styling for edit and delete buttons */
+  .btn-info, .btn-danger {
+    padding: 5px 10px;
+  }
+  
+  /* Responsive styling for small screens */
+  @media (max-width: 768px) {
+    .container {
+      margin-top: 20px;
+    }
+  
+    h1 {
+      font-size: 24px;
+    }
+  
+    #searchInput {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+  
