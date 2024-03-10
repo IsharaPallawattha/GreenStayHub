@@ -7,22 +7,9 @@
 
 </head>
 <body>
-	<div>
-		<?php
-			if(isset($_POST['create'])){
-				$firstname  = $_POST['firstname'];
-				$lastname   = $_POST['lastname'];
-				$phoneno    = $_POST['phoneno'];
-				$email      = $_POST['email'];
-				$password   = $_POST['password'];
-
-				echo $firstname ." ".$lastname ." ".$phoneno ." ".$email ." ".$password; 
-			}
-		?>
-	</div>
 	<div class="container">
 		<h2>Registration Form</h2>
-	<form action="bootstrapform.php" method="post">
+	<form action="form.php" method="post">
 		<div class="form-group">
     <label for="firstname">First Name</label>
     <input type="text" class="form-control" id="exampleInputfirstname" name="firstname">
