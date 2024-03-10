@@ -11,7 +11,7 @@
     <img src="green_stay_hub_logo.png" alt="GreenStayHub Logo">
     <h1>--Admin Dashboard</h1>
   </header>
-  <nav class="sidenav">
+  <nav class="bsidenav">
     <ul>
       <li><a href="#user-management">User Management</a></li>
       <li><a href="#content-management">Content Management</a></li>
@@ -24,7 +24,7 @@
       <button id="create-account-btn">Create New Account</button>
       <div id="create-account-form" class="hidden">
         <div class="form-container">
-          <form id="new-account-form">
+          <form id="new-account-form" action="adminconnection.php" method="post">
             <label for="first-name">First Name:</label>
             <input type="text" id="first-name" name="first-name" required>
             <label for="last-name">Last Name:</label>
@@ -40,6 +40,8 @@
               <option value="landlord">Landlord</option>
               <option value="warden">Warden</option>
             </select>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br>
             <button type="submit">Create Account</button>
           </form>
         </div>

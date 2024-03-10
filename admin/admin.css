@@ -2,6 +2,7 @@
 body, h1, h2, ul, li, p {
     margin: 0;
     padding: 0;
+    color: black;
   }
   
   /* Basic styles for header, main, footer */
