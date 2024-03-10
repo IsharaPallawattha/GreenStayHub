@@ -1,58 +1,104 @@
 <!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Dashboard</title>
-  <link rel="stylesheet" href="admin.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="admin.css">
+     
+    <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <title>Admin Dashboard Panel</title>
 </head>
 <body>
-  <header>
-    <img src="green_stay_hub_logo.png" alt="GreenStayHub Logo">
-    <h1>--Admin Dashboard</h1>
-  </header>
-  <nav class="sidenav">
-    <ul>
-      <li><a href="#user-management">User Management</a></li>
-      <li><a href="#content-management">Content Management</a></li>
-    </ul>
-  </nav>
-  <main>
-    <section id="user-management" class="module">
-      <h2>User Management</h2>
-      <!-- User management form goes here -->
-      <button id="create-account-btn">Create New Account</button>
-      <div id="create-account-form" class="hidden">
-        <div class="form-container">
-          <form id="new-account-form">
-            <label for="first-name">First Name:</label>
-            <input type="text" id="first-name" name="first-name" required>
-            <label for="last-name">Last Name:</label>
-            <input type="text" id="last-name" name="last-name" required>
-            <label for="mobile-no">Mobile No:</label>
-            <input type="tel" id="mobile-no" name="mobile-no" required>
-            <label for="batch">Batch:</label>
-            <input type="text" id="batch" name="batch">
-            <label for="user-type">User Type:</label>
-            <select id="user-type" name="user-type" required>
-              <option value="">Select User Type</option>
-              <option value="student">Student</option>
-              <option value="landlord">Landlord</option>
-              <option value="warden">Warden</option>
-            </select>
-            <button type="submit">Create Account</button>
-          </form>
+    <nav>
+        <div class="logo-name">
+            <div class="logo-image">
+               <img src="images/logo.png" alt="">
+            </div>
+
+            <span class="logo_name">Green Stay Hub</span>
         </div>
-      </div>
+
+        <div class="menu-items">
+            <ul class="nav-links">
+                <li><a href="#">
+                    <i class="uil uil-estate"></i>
+                    <span class="link-name">Dahsboard</span>
+                </a></li>
+                <li><a href="#">
+                    <i class="uil uil-files-landscapes"></i>
+                    <span class="link-name">New Account</span>
+                </a></li>
+                <li><a href="#">
+                    <i class="uil uil-chart"></i>
+                    <span class="link-name">Articles</span>
+                </a></li>
+            </ul>
+            
+            <ul class="logout-mode">
+                <li><a href="#">
+                    <i class="uil uil-signout"></i>
+                    <span class="link-name">Logout</span>
+                </a></li>
+
+                <li class="mode">
+                    <a href="#">
+                        <i class="uil uil-moon"></i>
+                    <span class="link-name">Dark Mode</span>
+                </a>
+
+                <div class="mode-toggle">
+                  <span class="switch"></span>
+                </div>
+            </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="dashboard">
+        <div class="top">
+            <i class="uil uil-bars sidebar-toggle"></i>
+
+            <div class="search-box">
+                <i class="uil uil-search"></i>
+                <input type="text" placeholder="Search here...">
+            </div>
+            
+            <!--<img src="images/profile.jpg" alt="">-->
+        </div>
+
+        <div class="dash-content">
+            <div class="overview">
+                <div class="title">
+                   
+                </div>
+
+                <div class="boxes">
+                    <div class="box box1">
+                        <i class="uil uil-thumbs-up"></i>
+                        <span class="text">Total Likes</span>
+                        <span class="number">50,120</span>
+                    </div>
+                    <div class="box box2">
+                        <i class="uil uil-comments"></i>
+                        <span class="text">Comments</span>
+                        <span class="number">20,120</span>
+                    </div>
+                    <div class="box box3">
+                        <i class="uil uil-share"></i>
+                        <span class="text">Total Share</span>
+                        <span class="number">10,120</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-    <section id="content-management" class="module">
-     
-      <!-- Content management form goes here -->
-    </section>
-  </main>
-  <footer>
-    <p>&copy; 2024 NSBM Green University</p>
-  </footer>
-  <script src="admin.js"></script>
+
+    <script src="admin.js"></script>
 </body>
 </html>

@@ -1,17 +1,32 @@
-// Show/hide the new account form
-const createAccountBtn = document.getElementById('create-account-btn');
-const createAccountForm = document.getElementById('create-account-form');
+const body = document.querySelector("body"),
+      modeToggle = body.querySelector(".mode-toggle");
+      sidebar = body.querySelector("nav");
+      sidebarToggle = body.querySelector(".sidebar-toggle");
 
-createAccountBtn.addEventListener('click', () => {
-  createAccountForm.classList.toggle('hidden');
-  createAccountForm.classList.toggle('show');
+let getMode = localStorage.getItem("mode");
+if(getMode && getMode ==="dark"){
+    body.classList.toggle("dark");
+}
+
+let getStatus = localStorage.getItem("status");
+if(getStatus && getStatus ==="close"){
+    sidebar.classList.toggle("close");
+}
+
+modeToggle.addEventListener("click", () =>{
+    body.classList.toggle("dark");
+    if(body.classList.contains("dark")){
+        localStorage.setItem("mode", "dark");
+    }else{
+        localStorage.setItem("mode", "light");
+    }
 });
 
-// Handle click on User Management button in side navigation
-const userManagementLink = document.querySelector('.sidenav a[href="#user-management"]');
-
-userManagementLink.addEventListener('click', (e) => {
-  e.preventDefault();
-  createAccountForm.classList.remove('hidden');
-  createAccountForm.classList.add('show');
-});
+sidebarToggle.addEventListener("click", () => {
+    sidebar.classList.toggle("close");
+    if(sidebar.classList.contains("close")){
+        localStorage.setItem("status", "close");
+    }else{
+        localStorage.setItem("status", "open");
+    }
+})
