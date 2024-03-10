@@ -1,178 +1,50 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+	<title>form</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="reg.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
-    <title>Dashboard - Admin | GreenSTAYhub</title>
-
-    <link rel="icon" href="https://i.postimg.cc/MKJm2kGp/favicon.png">
-
-    <link rel="preload" href="admin.css" as="style" type="text/css">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" as="style" type="text/css" crossorigin>
-    <link rel="preload" href="https://i.postimg.cc/MKJm2kGp/favicon.png" as="image" type="image/png">
-    <link rel="preload" href="https://i.postimg.cc/TwdpWvhk/admin-Logo.png" as="image" type="image/png">
-
-    <script src="admin.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
-
 </head>
-
 <body>
+	<div>
+		<?php
+			if(isset($_POST['create'])){
+				$firstname  = $_POST['firstname'];
+				$lastname   = $_POST['lastname'];
+				$phoneno    = $_POST['phoneno'];
+				$email      = $_POST['email'];
+				$password   = $_POST['password'];
 
-<div class="body flex flexRow">
-
-    <div class="navigation flex flexCol">
-
-        <div class="navContainer flex flexCol">
-            <div class="navLogo flex" onclick="window.location.href='dashboard.jsp'">
-                <img src="https://i.postimg.cc/TwdpWvhk/admin-Logo.png">
-            </div>
-
-            <nav class="flex flexCol">
-                        <span class="activeLink flex flexRow">
-                            <span class="navLinkIcon flex">
-                                <i class="fa-solid fa-gauge"></i>
-                            </span>
-                            <a href="#user-management">Register</a>
-                        </span>
-
-                <span class="navLink flex flexRow" onclick="window.location.href='products.jsp'">
-                            <span class="navLinkIcon flex">
-                                <i class="fa-solid fa-box"></i>
-                            </span>
-                            Articles
-                </span>   
-            </nav>
-        </div>
-
-    </div>
-
-    <div class="dashboard">
-
-        <!-- TOPBAR START ============================================================-->
-        <div class="topBar flex" id="topBar"></div>
-        <script src="topBar.js"></script>
-        <!--============================================================== TOPBAR END -->
-
-        <div class="dashboardContent flex">
-
-            <div class="dashboardContainer flex flexCol">
-
-                <div class="pageTopic flex">
-                    <div class="pageTopicContainer flex flexRow">
-                        <h1>Create New Account</h1>
-
-                        <span class="reloadIcon flex" onclick="window.location.reload();" title="Refresh">
-                                    <i class="fa-solid fa-arrows-rotate">
-
-                                    </i>
-                                
-                        </span>
-                    </div>
-                </div>
-
-                <section class="cardsContainer flex flexRow">
-
-                    <div class="profileCard flex flexCol">
-                       <div class="subCardsContainer flex flexRow">
-                            <div class="subCard flex flexRow">
-                                <section id="user-management" class="module">
-                                    <h2>User Management</h2>
-                                    <!-- User management form goes here -->
-                                    <button id="create-account-btn">Create New Account</button>
-                                    <div id="create-account-form" class="hidden">
-                                      <div class="form-container">
-                                        <form id="new-account-form">
-                                          <label for="first-name">First Name:</label>
-                                          <input type="text" id="first-name" name="first-name" required>
-                                          <label for="last-name">Last Name:</label>
-                                          <input type="text" id="last-name" name="last-name" required>
-                                          <label for="mobile-no">Mobile No:</label>
-                                          <input type="tel" id="mobile-no" name="mobile-no" required>
-                                          <label for="batch">Batch:</label>
-                                          <input type="text" id="batch" name="batch">
-                                          <label for="user-type">User Type:</label>
-                                          <select id="user-type" name="user-type" required>
-                                            <option value="">Select User Type</option>
-                                            <option value="student">Student</option>
-                                            <option value="landlord">Landlord</option>
-                                            <option value="warden">Warden</option>
-                                          </select>
-                                          <button type="submit">Create Account</button>
-                                        </form>
-                                      </div>
-                                    </div>
-                                  </section>
-                            </div>
-                       </div>
-                             
-                    </div>
-                </section>
-
-                <!--<div class="dashboardChart flex">
-                    <div class="chartContainer flex flexCol">
-
-                        <h1>Order Statistics</h1>
-
-                        <div class="statChart">
-                            <canvas id="myChart"></canvas>
-
-
-                            <script>
-                                var ctx = document.getElementById('myChart').getContext('2d');
-                                var dateStrings = JSON.parse('<%= new JSONArray(dates) %>'); // convert the dates ArrayList to a JSON array
-                                var orderCounts = JSON.parse('<%= new JSONArray(orders) %>'); // convert the orders ArrayList to a JSON array
-                                var dates = dateStrings.map(function(dateString) {
-                                    return new Date(dateString + 'T00:00:00'); // convert the date strings to Date objects
-                                });
-                                var myChart = new Chart(ctx, {
-                                    type: 'bar',
-                                    data: {
-                                        labels: dates, // use the Date objects for the x-axis
-                                        datasets: [{
-                                            label: 'Orders',
-                                            data: orderCounts, // order counts for the y-axis
-                                            backgroundColor: 'rgba(29, 163, 26, 0.5)',
-                                            borderColor: 'rgba(29, 163, 26, 1)',
-                                            borderWidth: 2,
-                                            borderRadius: 10
-                                        }]
-                                    },
-                                    options: {
-                                        scales: {
-                                            x: {
-                                                type: 'time',
-                                                time: {
-                                                    unit: 'day'
-                                                }
-                                            },
-                                            y: {
-                                                beginAtZero: true
-                                            }
-                                        }
-                                    }
-                                });
-                            </script>
-                        </div>
-
-                    </div>
-                </div>-->
-
-            </div>
-
-        </div>
-    </div>
-
+				echo $firstname ." ".$lastname ." ".$phoneno ." ".$email ." ".$password; 
+			}
+		?>
+	</div>
+	<div class="container">
+		<h2>Registration Form</h2>
+	<form action="bootstrapform.php" method="post">
+		<div class="form-group">
+    <label for="firstname">First Name</label>
+    <input type="text" class="form-control" id="exampleInputfirstname" name="firstname">
+  </div>
+  <div class="form-group">
+    <label for="lastname">Last Name</label>
+    <input type="text" class="form-control" id="exampleInputlastname" name="lastname">
+  </div>
+  <div class="form-group">
+    <label for="phoneno">Phone Number</label>
+    <input type="text" class="form-control" id="exampleInputphoneno" name="phoneno">
+  </div>
+  <div class="form-group">
+    <label for="Email1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+  </div>
+  <div class="form-group">
+    <label for="Password">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword" name="password">
+  </div>
+  <button type="submit" class="btn btn-primary" name="create">Sign up</button>
+</form>
 </div>
-
 </body>
 </html>
